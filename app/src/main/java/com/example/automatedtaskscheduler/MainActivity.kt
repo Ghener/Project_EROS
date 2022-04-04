@@ -20,7 +20,7 @@ public const val SPLASH_TIME = 4000L
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityMainBinding
-    private val firstTime = 1
+    private val firstTime = 0
 
 
     @RequiresApi(Build.VERSION_CODES.N)
