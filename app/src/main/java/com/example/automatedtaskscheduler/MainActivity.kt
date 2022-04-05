@@ -50,10 +50,13 @@ class MainActivity : AppCompatActivity() {
                     // record the fact that the app has been started at least once
                     settings.edit().putBoolean("my_first_time", false).commit()
                 }
-                else{
-                    val intent = Intent(this, Home::class.java)
+               else{
+                    val intent = Intent(this, Setup::class.java)
                     startActivity(intent)
                     finish()
+                    /*val intent = Intent(this, Home::class.java)
+                    startActivity(intent)
+                    finish()*/
                 }
             },
             SPLASH_TIME

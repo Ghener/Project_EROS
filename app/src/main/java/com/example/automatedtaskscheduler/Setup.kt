@@ -6,6 +6,8 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.util.Log
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
  class Setup : AppCompatActivity() {
@@ -42,6 +44,15 @@ import androidx.appcompat.app.AppCompatActivity
          personalHours.adapter = adapterHours
 
 
+         val buttonSave = findViewById<View>(R.id.button) as Button
+
+
+         buttonSave.setOnClickListener(){
+             val schoolHourSelected = schoolHours.selectedItem
+             val schoolRankSelected = schoolRank.selectedItem
+             println(schoolHourSelected)
+             println(schoolRankSelected)
+         }
      }
  }
 
