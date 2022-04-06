@@ -15,6 +15,9 @@ import androidx.appcompat.app.AppCompatActivity
          super.onCreate(savedInstanceState)
          setContentView(R.layout.activity_setup)
 
+         val context = this
+         val db = DataBaseHandler(context)
+
          val rank = resources.getStringArray(R.array.ranking)
 
          val schoolRank = findViewById<View>(R.id.spinnerSchool) as Spinner
@@ -48,10 +51,17 @@ import androidx.appcompat.app.AppCompatActivity
 
 
          buttonSave.setOnClickListener(){
-             val schoolHourSelected = schoolHours.selectedItem
              val schoolRankSelected = schoolRank.selectedItem
-             println(schoolHourSelected)
-             println(schoolRankSelected)
+             val familyRankSelected = familyRank.selectedItem
+             val personalRankSelected = personalRank.selectedItem
+
+             val schoolHourSelected = schoolHours.selectedItem
+             val familyHoursSelected = familyHours.selectedItem
+             val personalHoursSelected = personalHours.selectedItem
+
+             val userSetting = User_Setting(schoolRankSelected.toString().toInt(), familyRankSelected.toString().toInt(), personalRankSelected.toString().toInt(), schoolHourSelected.toString(), familyHoursSelected.toString(), personalHoursSelected.toString())
+             db.insertData(userSetting)
+
          }
      }
  }
