@@ -47,6 +47,7 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context, DATABASE
         }
         else{
             println("SUCCESS")
+
         }
     }
 }
